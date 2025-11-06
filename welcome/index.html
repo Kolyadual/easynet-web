@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать!</title>
+    <style>
+        /* Сброс стилей */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Основные стили */
+        body {
+            font-family: 'Arial', sans-serif; /* Шрифт */
+            background-color: #f0f8ff; /* Светло-голубой фон */
+            color: #333; /* Основной цвет текста */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Высота экрана */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px; /* Максимальная ширина */
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px; /* Скругленные углы */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Тень */
+        }
+
+        h1 {
+            font-size: 2.5rem; /* Размер заголовка */
+            color: #2c3e50; /* Цвет заголовка */
+            margin-bottom: 1rem; /* Отступ снизу */
+        }
+
+        p {
+            font-size: 1.2rem; /* Размер текста */
+            line-height: 1.6; /* Высота строки */
+            margin-bottom: 1.5rem; /* Отступ снизу */
+        }
+
+        /* Анимация для приветствия */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Привет!</h1>
+        <p>Спасибо что используешь этот браузер!</p>
+        <p>Ваш браузер <strong>EasyNET Browser</strong> успешно запустился и готов к использованию!</p>
+        <p>Ведите свой запрос или перейдите на <a href="https://kolyadual.github.io/easynet-web/">Главную страницу</a> чтобы начать использование!</p>
+    </div>
+</body>
+</html>
