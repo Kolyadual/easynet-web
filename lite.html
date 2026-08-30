@@ -21,7 +21,7 @@ h1{
   color:#888;
   margin-bottom:1.8em
 }
-/* ── основной поиск ── */
+
 .main-search{margin-bottom:.6em}
 .main-search input[type=text]{
   width:100%;
@@ -35,10 +35,10 @@ h1{
   outline:none
 }
 .main-search input[type=text]:focus{border-color:#5b7fa6}
+
 .btns{margin-top:.7em;margin-bottom:2.2em}
-.btns button{
-  display:inline-block;
-  margin:4px 3px;
+.search-form{display:inline-block;margin:4px 3px}
+.search-form button{
   padding:7px 15px;
   font-size:.85em;
   color:#c0c0c0;
@@ -47,9 +47,8 @@ h1{
   border-radius:5px;
   cursor:pointer
 }
-.btns button:active{background:#252525}
+.search-form button:active{background:#252525}
 
-/* ── доп. поисковики ── */
 .extra{margin-bottom:2.4em}
 .extra-title{
   font-size:.75em;
@@ -80,7 +79,7 @@ h1{
   cursor:pointer
 }
 
-/* ── разделитель ── */
+
 hr{
   border:none;
   border-top:1px solid #222;
@@ -88,7 +87,6 @@ hr{
   margin:0 auto 1.6em
 }
 
-/* ── быстрые ссылки ── */
 .links a{
   display:inline-block;
   margin:4px 8px;
@@ -104,21 +102,39 @@ hr{
 
 <h1>· EasyNET lite start ·</h1>
 
-<!-- ════ Основной поиск (параметр q) ════ -->
-<form class="main-search" action="https://lite.duckduckgo.com/lite/" method="get">
-  <input type="text" name="q" placeholder="search for…" autocomplete="off">
-  <div class="btns">
-    <button type="submit" formaction="https://lite.duckduckgo.com/lite/">DuckDuckGo</button>
-    <button type="submit" formaction="https://wiby.me/">Wiby</button>
-    <button type="submit" formaction="https://www.mojeek.com/search">Mojeek</button>
-    <button type="submit" formaction="https://searx.be/search">SearXNG</button>
-    <button type="submit" formaction="https://4get.ca/web">4get</button>
-  </div>
-</form>
+<div class="main-search">
+  <input type="text" id="search" placeholder="search for…" autocomplete="off">
+</div>
 
-<!-- ════ Доп. поисковики (параметр query) ════ -->
+<div class="btns">
+  <form class="search-form" action="https://lite.duckduckgo.com/lite/" method="get" target="_self">
+    <input type="hidden" name="q" id="ddg-q">
+    <button type="submit" onclick="document.getElementById('ddg-q').value=document.getElementById('search').value">DuckDuckGo</button>
+  </form>
+
+  <form class="search-form" action="https://wiby.me/" method="get" target="_self">
+    <input type="hidden" name="q" id="wiby-q">
+    <button type="submit" onclick="document.getElementById('wiby-q').value=document.getElementById('search').value">Wiby</button>
+  </form>
+
+  <form class="search-form" action="https://www.mojeek.com/search" method="get" target="_self">
+    <input type="hidden" name="q" id="mojeek-q">
+    <button type="submit" onclick="document.getElementById('mojeek-q').value=document.getElementById('search').value">Mojeek</button>
+  </form>
+
+  <form class="search-form" action="https://searx.be/search" method="get" target="_self">
+    <input type="hidden" name="q" id="searx-q">
+    <button type="submit" onclick="document.getElementById('searx-q').value=document.getElementById('search').value">SearXNG</button>
+  </form>
+
+  <form class="search-form" action="https://4get.ca/web" method="get" target="_self">
+    <input type="hidden" name="q" id="4get-q">
+    <button type="submit" onclick="document.getElementById('4get-q').value=document.getElementById('search').value">4get</button>
+  </form>
+</div>
+
 <div class="extra">
-  <div class="extra-title">More</div>
+  <div class="extra-title">more</div>
 
   <form class="mini-form" action="https://search.yacy.net/yacysearch/index.html" method="get">
     <input type="text" name="query" placeholder="YaCy…">
@@ -133,7 +149,6 @@ hr{
 
 <hr>
 
-<!-- ════ Быстрые ссылки ════ -->
 <div class="links">
   <a href="https://ru.wikipedia.org">Wiki</a>
   <a href="https://github.com">GitHub</a>
