@@ -1,97 +1,147 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>EasyNET — Поиск</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background: #f5f5f5;
-            color: #222;
-            margin: 0;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .search-box {
-            display: inline-flex;
-            align-items: center;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            padding: 5px;
-        }
-        input[type="text"] {
-            width: 400px;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-        button[type="submit"] {
-            padding: 8px 16px;
-            margin-left: 5px;
-            border: none;
-            background: #4a90d9;
-            color: #fff;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        details {
-            display: inline-block;
-            margin-left: 5px;
-        }
-        summary {
-            cursor: pointer;
-            background: #eee;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        .menu {
-            position: absolute;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-top: 5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            padding: 5px;
-        }
-        .menu button {
-            display: block;
-            width: 100%;
-            text-align: left;
-            background: none;
-            border: none;
-            padding: 8px 12px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-        .menu button:hover {
-            background: #f0f0f0;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Старт</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#111;
+  color:#d4d4d4;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  text-align:center;
+  padding:12% 16px 40px;
+  line-height:1.5
+}
+h1{
+  font-size:1.6em;
+  font-weight:300;
+  letter-spacing:.15em;
+  color:#888;
+  margin-bottom:1.8em
+}
+/* ── основной поиск ── */
+.main-search{margin-bottom:.6em}
+.main-search input[type=text]{
+  width:100%;
+  max-width:420px;
+  padding:10px 14px;
+  font-size:1em;
+  color:#e0e0e0;
+  background:#1a1a1a;
+  border:1px solid #333;
+  border-radius:6px;
+  outline:none
+}
+.main-search input[type=text]:focus{border-color:#5b7fa6}
+.btns{margin-top:.7em;margin-bottom:2.2em}
+.btns button{
+  display:inline-block;
+  margin:4px 3px;
+  padding:7px 15px;
+  font-size:.85em;
+  color:#c0c0c0;
+  background:#1a1a1a;
+  border:1px solid #333;
+  border-radius:5px;
+  cursor:pointer
+}
+.btns button:active{background:#252525}
+
+/* ── доп. поисковики ── */
+.extra{margin-bottom:2.4em}
+.extra-title{
+  font-size:.75em;
+  color:#555;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:.6em
+}
+.mini-form{margin-bottom:5px}
+.mini-form input[type=text]{
+  width:180px;
+  padding:5px 8px;
+  font-size:.82em;
+  color:#d0d0d0;
+  background:#161616;
+  border:1px solid #2a2a2a;
+  border-radius:4px;
+  vertical-align:middle
+}
+.mini-form button{
+  padding:5px 11px;
+  font-size:.8em;
+  color:#aaa;
+  background:#181818;
+  border:1px solid #2a2a2a;
+  border-radius:4px;
+  vertical-align:middle;
+  cursor:pointer
+}
+
+/* ── разделитель ── */
+hr{
+  border:none;
+  border-top:1px solid #222;
+  max-width:320px;
+  margin:0 auto 1.6em
+}
+
+/* ── быстрые ссылки ── */
+.links a{
+  display:inline-block;
+  margin:4px 8px;
+  padding:5px 0;
+  font-size:.85em;
+  color:#5b7fa6;
+  text-decoration:none
+}
+.links a:active{color:#8ab4e8}
+</style>
 </head>
 <body>
-    <h1>EasyNET</h1>
-    <p>Приватный и лёгкий браузер</p>
 
-    <form action="https://lite.duckduckgo.com/lite/" method="GET">
-        <div class="search-box">
-            <input type="text" name="q" placeholder="Введите запрос...">
-            <button type="submit">Искать</button>
-            <details>
-                <summary>Выбор поисковика ▾</summary>
-                <div class="menu">
-                    <button type="submit" formaction="https://lite.duckduckgo.com/lite/">DuckDuckGo Lite</button>
-                    <button type="submit" formaction="https://www.mojeek.com/search">Mojeek</button>
-                    <button type="submit" formaction="https://wiby.me/">Wiby</button>
-                    <button type="submit" formaction="https://search.marginalia.nu/search">Marginalia</button>
-                    <button type="submit" formaction="https://searx.be/search">SearXNG</button>
-                </div>
-            </details>
-        </div>
-    </form>
+<h1>· старт ·</h1>
 
-    <p style="margin-top: 30px;"><a href="https://kolyadual.github.io/easynet-web/">О проекте EasyNET</a></p>
+<!-- ════ Основной поиск (параметр q) ════ -->
+<form class="main-search" action="https://lite.duckduckgo.com/lite/" method="get">
+  <input type="text" name="q" placeholder="искать…" autocomplete="off">
+  <div class="btns">
+    <button type="submit" formaction="https://lite.duckduckgo.com/lite/">DuckDuckGo</button>
+    <button type="submit" formaction="https://wiby.me/">Wiby</button>
+    <button type="submit" formaction="https://www.mojeek.com/search">Mojeek</button>
+    <button type="submit" formaction="https://searx.be/search">SearXNG</button>
+    <button type="submit" formaction="https://4get.ca/web">4get</button>
+  </div>
+</form>
+
+<!-- ════ Доп. поисковики (параметр query) ════ -->
+<div class="extra">
+  <div class="extra-title">ещё</div>
+
+  <form class="mini-form" action="https://search.yacy.net/yacysearch/index.html" method="get">
+    <input type="text" name="query" placeholder="YaCy…">
+    <button type="submit">YaCy</button>
+  </form>
+
+  <form class="mini-form" action="https://search.marginalia.nu/search" method="get">
+    <input type="text" name="query" placeholder="Marginalia…">
+    <button type="submit">Marginalia</button>
+  </form>
+</div>
+
+<hr>
+
+<!-- ════ Быстрые ссылки ════ -->
+<div class="links">
+  <a href="https://ru.wikipedia.org">Wiki</a>
+  <a href="https://github.com">GitHub</a>
+  <a href="https://habr.com">Habr</a>
+  <a href="https://old.reddit.com">Reddit</a>
+  <a href="https://youtube.com">YouTube</a>
+  <a href="https://lite.cnn.com">CNN Lite</a>
+</div>
+
 </body>
 </html>
